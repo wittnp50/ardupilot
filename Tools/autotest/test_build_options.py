@@ -18,8 +18,6 @@ grep 'sabling.*saves' /tmp/tbo-out
 AP_FLAKE8_CLEAN
 """
 
-from __future__ import print_function
-
 import fnmatch
 import optparse
 import os
@@ -270,6 +268,7 @@ class TestBuildOptions(object):
             'AP_PLANE_BLACKBOX_LOGGING',  # entirely elided if no user
             'AP_COMPASS_AK8963_ENABLED',  # probed on a board-by-board basis, not on CubeOrange for example
             'AP_COMPASS_LSM303D_ENABLED',  # probed on a board-by-board basis, not on CubeOrange for example
+            'AP_BARO_THST_COMP_ENABLED',  # compiler is optimising this symbol away
         ])
         if target.lower() != "copter":
             feature_define_whitelist.add('MODE_ZIGZAG_ENABLED')
@@ -290,6 +289,7 @@ class TestBuildOptions(object):
             feature_define_whitelist.add(r'AP_MOTORS_FRAME_.*_ENABLED')
             feature_define_whitelist.add('AP_COPTER_ADVANCED_FAILSAFE_ENABLED')
             feature_define_whitelist.add('AP_INERTIALSENSOR_FAST_SAMPLE_WINDOW_ENABLED')
+            feature_define_whitelist.add('AP_COPTER_AHRS_AUTO_TRIM_ENABLED')
 
         if target.lower() != "plane":
             # only on Plane:

@@ -18,7 +18,6 @@
 
 #include <AP_HAL/HAL.h>
 #include <AP_HAL/I2CDevice.h>
-#include <AP_HAL/utility/OwnPtr.h>
 
 #include "Semaphores.h"
 #include "Scheduler.h"
@@ -106,7 +105,7 @@ protected:
     uint8_t _retries;
     uint8_t _address;
     char *pname;
-
+    uint32_t _timeout_ms;
 };
 
 class I2CDeviceManager : public AP_HAL::I2CDeviceManager
