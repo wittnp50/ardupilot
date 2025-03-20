@@ -1,0 +1,22 @@
+idf.py -p PORT4 [-b 115200] flash
+
+{
+  "esp32_mode": 2,
+  "wifi_ssid": "DroneBridge",
+  "wifi_pass": "dronebridge",
+  "ap_channel": 6,
+  "ap_ip": "192.168.2.1",
+  "dis_wifi_arm": 0,
+  "trans_pack_size": 128,
+  "tx_pin": 4,
+  "rx_pin": 5,
+  "cts_pin": 0,
+  "rts_pin": 0,
+  "rts_thresh":	64,
+  "baud": 115200,
+  "telem_proto": 4,
+  "ltm_pp": 2,
+  "static_client_ip": "",
+  "static_netmask": "",
+  "static_gw_ip": ""
+}
